@@ -4,36 +4,6 @@
     --white: white;
 }
 
-.ovalegrand,.ovalepetit{
-    border-radius: 100%;
-    background: var(--internationnal-orange);
-
-}
-
-.ovalegrand{
-    width: 20vw;
-    height: 5vh;
-}
-
-.ovalepetit{
-    width: 5vw;
-    height: 3vh ;
-    font-size: smaller;
-}
-.ecritblanc{
-    color: var(--white);
-}
-
-header div a{
-    color: var(--white);
-    text-decoration: none;
-}
-
-header div a:hover{
-    color: var(--purple-jam);
-    text-decoration: underline;
-}
-
 .rubanorange{
     background-color: var(--internationnal-orange);
     padding: 1%;
