@@ -30,3 +30,9 @@ header div a:hover{
 .rubanorange{
     background-color: var(--internationnal-orange);
 }
+
+.boite{
+    color: var(--white);
+    background-color: var(--purple-jam);
+    text-align: center;
+}
