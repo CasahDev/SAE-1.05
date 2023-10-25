@@ -14,3 +14,31 @@
     background-color: var(--purple-jam);
     text-align: center;
 }
+
+#filter{
+    padding-left: 2em;
+    padding-right: 2em;
+}
+
+.nombregrand{
+    width: 5vw;
+}
+
+.nombrepetit{
+    width: 3vw;
+}
+
+#filter{
+    color: var(--white);
+    margin-top: 2em;
+    background-color: var(--internationnal-orange);
+}
+
+.box{
+    color: var(--internationnal-orange);
+    margin-top: 1em;
+}
+
+.form-control option:first-child,[value]{
+    color: var(--internationnal-orange);
+}
