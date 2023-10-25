@@ -15,8 +15,6 @@
 }
 
 header {
-    height: auto;
-    width: 100%;
     background-color: var(--purple-jam);
 }
 
@@ -40,4 +38,17 @@ header {
     float: right;
     border: none;
     height: 3em;
+    background-color: transparent;
+}
+
+#connectionButtonsTiny, #connectionButtonsLarge {
+    position: relative;
+}
+
+.connectionButton {
+    background-color: var(--internationnal-orange);
+    border-radius: 100%;   
+    color: var(--white);
+    text-decoration: none;
+    padding: 1em;
 }
