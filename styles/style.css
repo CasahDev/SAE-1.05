@@ -1,0 +1,43 @@
+:root {
+    --purple-jam: #6E0E83;
+    --internationnal-orange: #FF500B;
+    --white: white;
+}
+
+@font-face {
+    font-family: "Roboto";
+    src: url(../fonts/Roboto-Medium.ttf);
+}
+
+@font-face {
+    font-family: "Gotham";
+    src: url(../fonts/Gotham-Medium.otf);
+}
+
+header {
+    height: auto;
+    width: 100%;
+    background-color: var(--purple-jam);
+}
+
+#searchbar {
+    background-color: var(--white);
+    height: 3em;
+    padding: 0px;
+}
+
+#searchbar input {
+    height: 3em;
+    border: none;
+}
+
+#searchbar input::placeholder {
+    font-family: "Roboto";
+    color: var(--purple-jam)
+}
+
+#searchButton {
+    float: right;
+    border: none;
+    height: 3em;
+}
