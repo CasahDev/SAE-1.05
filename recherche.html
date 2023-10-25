@@ -26,28 +26,38 @@
                 </button>
             </div>
             <div class="col-md-1 d-none d-md-block"></div>
-            <div class="col-md-1 d-none d-md-block ovalegrand"><a href="#">Connexion</a></div>
+            <div class="col-md-2 d-none d-md-block ovalegrand"><a href="#">Connexion</a></div>
             <div class="col-md-1 d-none d-md-block"></div>
-            <div class="col-md-1 d-none d-md-block ovalegrand"><a href="#">Inscription</a></div>
+            <div class="col-md-2 d-none d-md-block ovalegrand"><a href="#">Inscription</a></div>
         </div>
         </div>
     </header>
-    <div class="container-fluid rubanorange">
-        <div class="row justify-content-between align-items-center">
-            <div class="col-md-1"></div>
+    <div class="container-fluid rubanorange d-md-block d-none">
+        <div class="row justify-content-between align-items-center" id="filter">
             <div class="col-md-1 boite">Filtres</div>
-            <div class="col-md-1"></div>
             <div class="col-md-1 boite">Instrument ▼</div>
-            <div class="col-md-1"></div>
             <div class="col-md-1 boite">Style ▼</div>
-            <div class="col-md-1"></div>
-            <div class="col-md-2 boite">Tarif | Entre ☐ € et ☐ €</div>
-            <div class="col-md-1"></div>
-            <div class="col-md-2 boite">Présentiel <input type="checkbox"> | Distanciel <input type="checkbox"></div>
-            <div class="col-md-1"></div>
-
+            <div class="col-md-2 boite">Tarif | Entre <input type="number" class="nombrepetit">€ et <input type="number"class="nombrepetit">€</div>
+            <div class="col-md-2 boite">Présentiel <input type="radio" name="choix" id="Présentiel"> | Distanciel <input type="radio" name="choix" id="Distanciel"></div>
+            <div class="col-md-2 boite">Distance <input type="number" class="nombregrand"> km</div>
         </div>
     </div>
-    
+    <div class="row d-md-none col-6">
+        <div id="filter">Filtres</div>
+        <div class="box">
+            <div class="container mt-5">
+                <div class="form-group">
+                    <select class="form-control">
+                        <option value="">Instruments ▼</option>
+                        <option value="option1">Voix</option>
+                        <option value="option2">Guitare</option>
+                        <option value="option3">Batterie</option>
+                        <option value="option4">Piano</option>
+                    </select>
+                </div>
+            </div>
+        
+        </div>
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>   
 </body>
