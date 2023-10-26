@@ -32,34 +32,23 @@
         </div>
         </div>
     </header>
+
     <!--Partie filtre quand l'écran est en mode ordinateur-->
     <div class="container-fluid rubanorange d-md-block d-none">
         <div class="row justify-content-between align-items-center" id="filter">
             <div class="col-md-1 boite">Filtres</div>
-            <div class="col-md-1 boite">Instrument ▼</div>
-            <div class="col-md-1 boite">Style ▼</div>
-            <div class="col-md-2 boite">Tarif | Entre <input type="number" class="nombrepetit">€ et <input type="number"class="nombrepetit">€</div>
-            <div class="col-md-2 boite">Présentiel <input type="radio" name="choix" id="Présentiel"> | Distanciel <input type="radio" name="choix" id="Distanciel"></div>
-            <div class="col-md-2 boite">Distance <input type="number" class="nombregrand"> km</div>
-        </div>
-    </div>
-    <!--Partie filtre quand l'écran est en mode téléphone-->
-    <div class="d-md-none col-6">
-        <div id="filter">Filtres</div>
-        <div class="box">
-            <div class="container mt-5">
-                <div class="form-group">
-                    <select class="form-control">
-                        <option class="orange" value="">Instruments ▼</option>
-                        <option value="option1">Voix</option>
-                        <option value="option2">Guitare</option>
-                        <option value="option3">Batterie</option>
-                        <option value="option4">Piano</option>
-                    </select>
-                </div>
+            <div class="col-md-2 boite">
+                    <div class="form-group">
+                        <select class="form-control">
+                            <option class="orange" value="">Instruments ▼</option>
+                            <option value="option1">Voix</option>
+                            <option value="option2">Guitare</option>
+                            <option value="option3">Batterie</option>
+                            <option value="option4">Piano</option>
+                        </select>
+                    </div>
             </div>
-        <div class="box">
-            <div class="container mt-5">
+            <div class="col-md-1 boite">
                 <div class="form-group">
                     <select class="form-control">
                         <option class="orange" value="">Style ▼</option>
@@ -70,22 +59,981 @@
                     </select>
                 </div>
             </div>
-        </div>
-        <div class="box container">
-                Tarif
-        </div>
-        <div class="box container">
-                Entre <input type="number" class="nombregrand">€ et <input type="number" class="nombregrand">€ 
-        </div>
-        <div class="box container">
-            <label id="Présentiel" class="box">Présentiel</label>
-            <input type="radio" name="choixtel" id="presence">
-            <label id="Distanciel" class="box">Distanciel</label>
-            <input type="radio" name="choixtel" id="distance">
-        </div>
-        <div class="box container">
-            Distance : <input type="number" class="nombregrand"> km</div>
+            <div class="col-md-2 boite">Tarif | Entre <input type="number" class="nombrepetit">€ et <input type="number"class="nombrepetit">€</div>
+            <div class="col-md-2 boite">Présentiel <input type="radio" name="choix" id="Présentiel"> | Distanciel <input type="radio" name="choix" id="Distanciel"></div>
+            <div class="col-md-2 boite">Distance <input type="number" class="nombregrand"> km</div>
         </div>
     </div>
+
+    <!--Partie filtre quand l'écran est en mode téléphone-->
+    <div class="d-md-none col-6">
+        <div class="container mt-5">
+            <button type="button" class="btn btn-primary btn-orange" data-toggle="modal" data-target="#filtreModal">
+                Afficher les Filtres
+            </button>
+            <div class="modal fade" id="filtreModal" tabindex="-1" role="dialog" aria-labelledby="filtreModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="filtreModalLabel btn-orange">Filtres</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="box">
+                                <div class="container mt-5">
+                                    <div class="form-group">
+                                        <select class="form-control">
+                                            <option class="orange" value="">Instruments ▼</option>
+                                            <option value="option1">Voix</option>
+                                            <option value="option2">Guitare</option>
+                                            <option value="option3">Batterie</option>
+                                            <option value="option4">Piano</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            <div class="box">
+                                <div class="container mt-5">
+                                    <div class="form-group">
+                                        <select class="form-control">
+                                            <option class="orange" value="">Style ▼</option>
+                                            <option value="option1">Rock</option>
+                                            <option value="option2">Métal</option>
+                                            <option value="option3">Jazz</option>
+                                            <option value="option4">Pop</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="box container">
+                                    Tarif
+                            </div>
+                            <div class="box container">
+                                    Entre <input type="number" class="nombregrand">€ et <input type="number" class="nombregrand">€ 
+                            </div>
+                            <div class="box container">
+                                <label id="Présentiel" class="box">Présentiel</label>
+                                <input type="radio" name="choixtel" id="presence">
+                                <label id="Distanciel" class="box">Distanciel</label>
+                                <input type="radio" name="choixtel" id="distance">
+                            </div>
+                            <div class="box container">
+                                Distance : <input type="number" class="nombregrand"> km</div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary btn-violet" data-dismiss="modal">Fermer</button>
+                            <button type="button" class="btn btn-primary btn-orange">Appliquer</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Partie sur les résultats en format ordi-->
+    <div class="container-fluid d-md-block d-none">
+        <div class="container mt-5"></div>
+        <div class="row align-items-center justify-content-between">
+            <div class="col-md-2 result">
+                <div class="row">
+                    <div class="col-md-3 ">
+                        Photo
+                    </div>
+                    <div class="col-md-9 ">
+                        Nom musicien
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4 ">
+                        Vignette
+                    </div>
+                    <div class="col-md-8 ">
+                        Instruments
+                    </div>
+                    <div class="offset-md-4 col-md-8 ">
+                        Style 
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2 result">
+                <div class="row">
+                    <div class="col-md-3 ">
+                        Photo
+                    </div>
+                    <div class="col-md-9 ">
+                        Nom musicien
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4 ">
+                        Vignette
+                    </div>
+                    <div class="col-md-8 ">
+                        Instruments
+                    </div>
+                    <div class="offset-md-4 col-md-8 ">
+                        Style 
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2 result">
+                <div class="row">
+                    <div class="col-md-3 ">
+                        Photo
+                    </div>
+                    <div class="col-md-9 ">
+                        Nom musicien
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4 ">
+                        Vignette
+                    </div>
+                    <div class="col-md-8 ">
+                        Instruments
+                    </div>
+                    <div class="offset-md-4 col-md-8 ">
+                        Style 
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2 result">
+                <div class="row">
+                    <div class="col-md-3 ">
+                        Photo
+                    </div>
+                    <div class="col-md-9 ">
+                        Nom musicien
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4 ">
+                        Vignette
+                    </div>
+                    <div class="col-md-8 ">
+                        Instruments
+                    </div>
+                    <div class="offset-md-4 col-md-8 ">
+                        Style 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid d-md-block d-none">
+        <div class="container mt-5"></div>
+        <div class="row align-items-center justify-content-between">
+            <div class="col-md-2 result">
+                <div class="row">
+                    <div class="col-md-3 ">
+                        Photo
+                    </div>
+                    <div class="col-md-9 ">
+                        Nom musicien
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4 ">
+                        Vignette
+                    </div>
+                    <div class="col-md-8 ">
+                        Instruments
+                    </div>
+                    <div class="offset-md-4 col-md-8 ">
+                        Style 
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2 result">
+                <div class="row">
+                    <div class="col-md-3 ">
+                        Photo
+                    </div>
+                    <div class="col-md-9 ">
+                        Nom musicien
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4 ">
+                        Vignette
+                    </div>
+                    <div class="col-md-8 ">
+                        Instruments
+                    </div>
+                    <div class="offset-md-4 col-md-8 ">
+                        Style 
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2 result">
+                <div class="row">
+                    <div class="col-md-3 ">
+                        Photo
+                    </div>
+                    <div class="col-md-9 ">
+                        Nom musicien
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4 ">
+                        Vignette
+                    </div>
+                    <div class="col-md-8 ">
+                        Instruments
+                    </div>
+                    <div class="offset-md-4 col-md-8 ">
+                        Style 
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2 result">
+                <div class="row">
+                    <div class="col-md-3 ">
+                        Photo
+                    </div>
+                    <div class="col-md-9 ">
+                        Nom musicien
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4 ">
+                        Vignette
+                    </div>
+                    <div class="col-md-8 ">
+                        Instruments
+                    </div>
+                    <div class="offset-md-4 col-md-8 ">
+                        Style 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid d-md-block d-none">
+        <div class="container mt-5"></div>
+        <div class="row align-items-center justify-content-between">
+            <div class="col-md-2 result">
+                <div class="row">
+                    <div class="col-md-3 ">
+                        Photo
+                    </div>
+                    <div class="col-md-9 ">
+                        Nom musicien
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4 ">
+                        Vignette
+                    </div>
+                    <div class="col-md-8 ">
+                        Instruments
+                    </div>
+                    <div class="offset-md-4 col-md-8 ">
+                        Style 
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2 result">
+                <div class="row">
+                    <div class="col-md-3 ">
+                        Photo
+                    </div>
+                    <div class="col-md-9 ">
+                        Nom musicien
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4 ">
+                        Vignette
+                    </div>
+                    <div class="col-md-8 ">
+                        Instruments
+                    </div>
+                    <div class="offset-md-4 col-md-8 ">
+                        Style 
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2 result">
+                <div class="row">
+                    <div class="col-md-3 ">
+                        Photo
+                    </div>
+                    <div class="col-md-9 ">
+                        Nom musicien
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4 ">
+                        Vignette
+                    </div>
+                    <div class="col-md-8 ">
+                        Instruments
+                    </div>
+                    <div class="offset-md-4 col-md-8 ">
+                        Style 
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2 result">
+                <div class="row">
+                    <div class="col-md-3 ">
+                        Photo
+                    </div>
+                    <div class="col-md-9 ">
+                        Nom musicien
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4 ">
+                        Vignette
+                    </div>
+                    <div class="col-md-8 ">
+                        Instruments
+                    </div>
+                    <div class="offset-md-4 col-md-8 ">
+                        Style 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid d-md-block d-none">
+        <div class="container mt-5"></div>
+        <div class="row align-items-center justify-content-between">
+            <div class="col-md-2 result">
+                <div class="row">
+                    <div class="col-md-3 ">
+                        Photo
+                    </div>
+                    <div class="col-md-9 ">
+                        Nom musicien
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4 ">
+                        Vignette
+                    </div>
+                    <div class="col-md-8 ">
+                        Instruments
+                    </div>
+                    <div class="offset-md-4 col-md-8 ">
+                        Style 
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2 result">
+                <div class="row">
+                    <div class="col-md-3 ">
+                        Photo
+                    </div>
+                    <div class="col-md-9 ">
+                        Nom musicien
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4 ">
+                        Vignette
+                    </div>
+                    <div class="col-md-8 ">
+                        Instruments
+                    </div>
+                    <div class="offset-md-4 col-md-8 ">
+                        Style 
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2 result">
+                <div class="row">
+                    <div class="col-md-3 ">
+                        Photo
+                    </div>
+                    <div class="col-md-9 ">
+                        Nom musicien
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4 ">
+                        Vignette
+                    </div>
+                    <div class="col-md-8 ">
+                        Instruments
+                    </div>
+                    <div class="offset-md-4 col-md-8 ">
+                        Style 
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2 result">
+                <div class="row">
+                    <div class="col-md-3 ">
+                        Photo
+                    </div>
+                    <div class="col-md-9 ">
+                        Nom musicien
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4 ">
+                        Vignette
+                    </div>
+                    <div class="col-md-8 ">
+                        Instruments
+                    </div>
+                    <div class="offset-md-4 col-md-8 ">
+                        Style 
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid d-md-block d-none">
+            <div class="container mt-5"></div>
+            <div class="row align-items-center justify-content-between">
+                <div class="col-md-2 result">
+                    <div class="row">
+                        <div class="col-md-3 ">
+                            Photo
+                        </div>
+                        <div class="col-md-9 ">
+                            Nom musicien
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4 ">
+                            Vignette
+                        </div>
+                        <div class="col-md-8 ">
+                            Instruments
+                        </div>
+                        <div class="offset-md-4 col-md-8 ">
+                            Style 
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2 result">
+                    <div class="row">
+                        <div class="col-md-3 ">
+                            Photo
+                        </div>
+                        <div class="col-md-9 ">
+                            Nom musicien
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4 ">
+                            Vignette
+                        </div>
+                        <div class="col-md-8 ">
+                            Instruments
+                        </div>
+                        <div class="offset-md-4 col-md-8 ">
+                            Style 
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2 result">
+                    <div class="row">
+                        <div class="col-md-3 ">
+                            Photo
+                        </div>
+                        <div class="col-md-9 ">
+                            Nom musicien
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4 ">
+                            Vignette
+                        </div>
+                        <div class="col-md-8 ">
+                            Instruments
+                        </div>
+                        <div class="offset-md-4 col-md-8 ">
+                            Style 
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2 result">
+                    <div class="row">
+                        <div class="col-md-3 ">
+                            Photo
+                        </div>
+                        <div class="col-md-9 ">
+                            Nom musicien
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4 ">
+                            Vignette
+                        </div>
+                        <div class="col-md-8 ">
+                            Instruments
+                        </div>
+                        <div class="offset-md-4 col-md-8 ">
+                            Style 
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid d-md-block d-none">
+            <div class="container mt-5"></div>
+            <div class="row align-items-center justify-content-between">
+                <div class="col-md-2 result">
+                    <div class="row">
+                        <div class="col-md-3 ">
+                            Photo
+                        </div>
+                        <div class="col-md-9 ">
+                            Nom musicien
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4 ">
+                            Vignette
+                        </div>
+                        <div class="col-md-8 ">
+                            Instruments
+                        </div>
+                        <div class="offset-md-4 col-md-8 ">
+                            Style 
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2 result">
+                    <div class="row">
+                        <div class="col-md-3 ">
+                            Photo
+                        </div>
+                        <div class="col-md-9 ">
+                            Nom musicien
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4 ">
+                            Vignette
+                        </div>
+                        <div class="col-md-8 ">
+                            Instruments
+                        </div>
+                        <div class="offset-md-4 col-md-8 ">
+                            Style 
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2 result">
+                    <div class="row">
+                        <div class="col-md-3 ">
+                            Photo
+                        </div>
+                        <div class="col-md-9 ">
+                            Nom musicien
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4 ">
+                            Vignette
+                        </div>
+                        <div class="col-md-8 ">
+                            Instruments
+                        </div>
+                        <div class="offset-md-4 col-md-8 ">
+                            Style 
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2 result">
+                    <div class="row">
+                        <div class="col-md-3 ">
+                            Photo
+                        </div>
+                        <div class="col-md-9 ">
+                            Nom musicien
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4 ">
+                            Vignette
+                        </div>
+                        <div class="col-md-8 ">
+                            Instruments
+                        </div>
+                        <div class="offset-md-4 col-md-8 ">
+                            Style 
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid d-md-block d-none">
+            <div class="container mt-5"></div>
+            <div class="row align-items-center justify-content-between">
+                <div class="col-md-2 result">
+                    <div class="row">
+                        <div class="col-md-3 ">
+                            Photo
+                        </div>
+                        <div class="col-md-9 ">
+                            Nom musicien
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4 ">
+                            Vignette
+                        </div>
+                        <div class="col-md-8 ">
+                            Instruments
+                        </div>
+                        <div class="offset-md-4 col-md-8 ">
+                            Style 
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2 result">
+                    <div class="row">
+                        <div class="col-md-3 ">
+                            Photo
+                        </div>
+                        <div class="col-md-9 ">
+                            Nom musicien
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4 ">
+                            Vignette
+                        </div>
+                        <div class="col-md-8 ">
+                            Instruments
+                        </div>
+                        <div class="offset-md-4 col-md-8 ">
+                            Style 
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2 result">
+                    <div class="row">
+                        <div class="col-md-3 ">
+                            Photo
+                        </div>
+                        <div class="col-md-9 ">
+                            Nom musicien
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4 ">
+                            Vignette
+                        </div>
+                        <div class="col-md-8 ">
+                            Instruments
+                        </div>
+                        <div class="offset-md-4 col-md-8 ">
+                            Style 
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2 result">
+                    <div class="row">
+                        <div class="col-md-3 ">
+                            Photo
+                        </div>
+                        <div class="col-md-9 ">
+                            Nom musicien
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4 ">
+                            Vignette
+                        </div>
+                        <div class="col-md-8 ">
+                            Instruments
+                        </div>
+                        <div class="offset-md-4 col-md-8 ">
+                            Style 
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Partie sur affichage des resultats en fromat téléphone-->
+    <div class="container-fluid d-md-none">
+        <div class="container mt-5"></div>
+        <div class="row align-items-center justify-content-between">
+            <div class="col-5 result">
+                <div class="row">
+                    <div class="col-3">
+                        Photo
+                    </div>
+                    <div class="offset-1 col-2">
+                        Nom <br>musicien
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-5">
+                        Vignette
+                    </div>
+                    <div class="col-7">
+                        Instruments
+                    </div>
+                    <div class="offset-5 col-7">
+                        Style 
+                    </div>
+                </div>
+            </div>
+            <div class="col-5 result">
+                <div class="row">
+                    <div class="col-3">
+                        Photo
+                    </div>
+                    <div class="offset-1 col-2">
+                        Nom <br>musicien
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-5">
+                        Vignette
+                    </div>
+                    <div class="col-7">
+                        Instruments
+                    </div>
+                    <div class="offset-5 col-7">
+                        Style 
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container mt-5"></div>
+        <div class="row align-items-center justify-content-between">
+            <div class="col-5 result">
+                <div class="row">
+                    <div class="col-3">
+                        Photo
+                    </div>
+                    <div class="offset-1 col-2">
+                        Nom <br>musicien
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-5">
+                        Vignette
+                    </div>
+                    <div class="col-7">
+                        Instruments
+                    </div>
+                    <div class="offset-5 col-7">
+                        Style 
+                    </div>
+                </div>
+            </div>
+            <div class="col-5 result">
+                <div class="row">
+                    <div class="col-3">
+                        Photo
+                    </div>
+                    <div class="offset-1 col-2">
+                        Nom <br>musicien
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-5">
+                        Vignette
+                    </div>
+                    <div class="col-7">
+                        Instruments
+                    </div>
+                    <div class="offset-5 col-7">
+                        Style 
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container mt-5"></div>
+        <div class="row align-items-center justify-content-between">
+            <div class="col-5 result">
+                <div class="row">
+                    <div class="col-3">
+                        Photo
+                    </div>
+                    <div class="offset-1 col-2">
+                        Nom <br>musicien
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-5">
+                        Vignette
+                    </div>
+                    <div class="col-7">
+                        Instruments
+                    </div>
+                    <div class="offset-5 col-7">
+                        Style 
+                    </div>
+                </div>
+            </div>
+            <div class="col-5 result">
+                <div class="row">
+                    <div class="col-3">
+                        Photo
+                    </div>
+                    <div class="offset-1 col-2">
+                        Nom <br>musicien
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-5">
+                        Vignette
+                    </div>
+                    <div class="col-7">
+                        Instruments
+                    </div>
+                    <div class="offset-5 col-7">
+                        Style 
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container mt-5"></div>
+        <div class="row align-items-center justify-content-between">
+            <div class="col-5 result">
+                <div class="row">
+                    <div class="col-3">
+                        Photo
+                    </div>
+                    <div class="offset-1 col-2">
+                        Nom <br>musicien
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-5">
+                        Vignette
+                    </div>
+                    <div class="col-7">
+                        Instruments
+                    </div>
+                    <div class="offset-5 col-7">
+                        Style 
+                    </div>
+                </div>
+            </div>
+            <div class="col-5 result">
+                <div class="row">
+                    <div class="col-3">
+                        Photo
+                    </div>
+                    <div class="offset-1 col-2">
+                        Nom <br>musicien
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-5">
+                        Vignette
+                    </div>
+                    <div class="col-7">
+                        Instruments
+                    </div>
+                    <div class="offset-5 col-7">
+                        Style 
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container mt-5"></div>
+        <div class="row align-items-center justify-content-between">
+            <div class="col-5 result">
+                <div class="row">
+                    <div class="col-3">
+                        Photo
+                    </div>
+                    <div class="offset-1 col-2">
+                        Nom <br>musicien
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-5">
+                        Vignette
+                    </div>
+                    <div class="col-7">
+                        Instruments
+                    </div>
+                    <div class="offset-5 col-7">
+                        Style 
+                    </div>
+                </div>
+            </div>
+            <div class="col-5 result">
+                <div class="row">
+                    <div class="col-3">
+                        Photo
+                    </div>
+                    <div class="offset-1 col-2">
+                        Nom <br>musicien
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-5">
+                        Vignette
+                    </div>
+                    <div class="col-7">
+                        Instruments
+                    </div>
+                    <div class="offset-5 col-7">
+                        Style 
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container mt-5"></div>
+        <div class="row align-items-center justify-content-between">
+            <div class="col-5 result">
+                <div class="row">
+                    <div class="col-3">
+                        Photo
+                    </div>
+                    <div class="offset-1 col-2">
+                        Nom <br>musicien
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-5">
+                        Vignette
+                    </div>
+                    <div class="col-7">
+                        Instruments
+                    </div>
+                    <div class="offset-5 col-7">
+                        Style 
+                    </div>
+                </div>
+            </div>
+            <div class="col-5 result">
+                <div class="row">
+                    <div class="col-3">
+                        Photo
+                    </div>
+                    <div class="offset-1 col-2">
+                        Nom <br>musicien
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-5">
+                        Vignette
+                    </div>
+                    <div class="col-7">
+                        Instruments
+                    </div>
+                    <div class="offset-5 col-7">
+                        Style 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>   
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
 </body>

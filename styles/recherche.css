@@ -42,3 +42,25 @@
 .form-control option:first-child,[value]{
     color: var(--internationnal-orange);
 }
+
+.form-group{
+    background-color: var(--purple-jam);
+}
+
+.result{
+    background-color: var(--internationnal-orange);
+    margin-top: 5%;
+    color: var(--white);
+}
+
+.btn-orange {
+    background-color: var(--internationnal-orange) !important;
+    border-color: var(--internationnal-orange) !important; 
+    color: var(--white) !important; 
+}
+
+.btn-violet{
+    background-color: var(--purple-jam) !important;
+    border-color: var(--purple-jam) !important;
+    color: var(--white) !important;
+}
