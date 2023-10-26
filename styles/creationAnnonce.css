@@ -24,10 +24,14 @@ h1 {
     margin-bottom: 1em;
 }
 
-input[type="radio"]:checked {
+input[type="radio"]:checked, input[type="checkbox"]:checked {
     accent-color: var(--purple-jam);
 }
 
 #content ::placeholder {
     font-style: italic;
+}
+
+.dropdown-toggle {
+    float: right !important;
 }

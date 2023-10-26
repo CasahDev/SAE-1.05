@@ -10,9 +10,6 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
 <body>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
     <header class="container-fluid">
         <div class="row align-items-center">
             <div class="row col-md-1 col-4">
@@ -37,77 +34,531 @@
         </div>
         </div>
     </header>
-    <div class="container-fluid" id="content">
+    <div class="container" id="content">
         <form action="#">
             <h1>Créer une <span>annonce</span> :</h1>
-        <div class="row col-md-6" id="left">
-            <p>Ajoutez des <span>images</span> à votre annonce :</p>
-            <div id="mainImage" class="col-md-6 d-inline-block">
-                <img src="images/imagePlaceholder.png" alt="Bouton Ajouter une image" class="img-fluid" id="image1">
+
+            <!-- Partie de gauche -->
+            <div class="row col-md-6" id="left">
+                <p>Ajoutez des <span>images</span> à votre annonce :</p>
+                <div id="mainImage" class="col-md-6 d-inline-block">
+                    <img src="images/imagePlaceholder.png" alt="Bouton Ajouter une image" class="img-fluid" id="image1">
+                </div>
+                <div id="secondaryImages" class="row col-md-3 d-inline-block p-2">
+                    <img src="images/imagePlaceholder.png" alt="Bouton Ajouter une image" id="image2" class="img-fluid">
+                    <img src="images/imagePlaceholder.png" alt="Bouton Ajouter une image" class="img-fluid" id="image3">
+                </div>   
+                
+                <label for="prixPresta">Quel est le <span>prix</span> de cette prestation ?</label>
+                <input type="number" name="prixPrestaInput" id="prixPresta" placeholder="Prix (en euros)" class="col-md-7">
             </div>
-            <div id="secondaryImages" class="row col-md-3 d-inline-block p-2">
-                <img src="images/imagePlaceholder.png" alt="Bouton Ajouter une image" id="image2" class="img-fluid">
-                <img src="images/imagePlaceholder.png" alt="Bouton Ajouter une image" class="img-fluid" id="image3">
-            </div>   
-            
-            <label for="prixPresta">Quel est le <span>prix</span> de cette prestation ?</label>
-            <input type="number" name="prixPrestaInput" id="prixPresta" placeholder="Prix (en euros)" class="col-md-7">
-        </div>
-        <div class="row col-md-6" id="right">
-            <label for="titrePresta">Choisissez un <span>titre</span> :</label>
-            <input type="text" name="titrePrestaInput" id="titrePresta" maxlength="75" placeholder="Titre (75 caractères maximum)">
-            <label for="descPresta">Definissez une <span>description</span> :</label>
-            <textarea name="descPrestaInput" id="descPresta" cols="30" rows="7" maxlength="2000" placeholder="Description (2000 caractères maximum)"></textarea>
-            <div id="deplacementDiv">
-                Avez-vous la possibilité de vous <span>déplacer</span> ?
-                <label for="deplacementOUI">Oui</label>
-                <input type="radio" name="deplacement" id="deplacementOUI">
-                <label for="deplacementNON">Non</label>
-                <input type="radio" name="deplacement" id="deplacementNON">
-            </div>
-            <div class="btn-group dropup">
-                <button class="btn btn-primary dropdown-toggle drop" type="button" id="dropdownMenuButton"
-                data-mdb-toggle="dropdown" aria-expanded="false">
-                Checkbox dropdown
+            <!-- Partie de droite -->
+            <div class="row col-md-6" id="right">
+                <!-- Titre -->
+                <label for="titrePresta">Choisissez un <span>titre</span> :</label>
+                <input type="text" name="titrePrestaInput" id="titrePresta" maxlength="75" placeholder="Titre (75 caractères maximum)">
+                
+                <!-- Description -->
+                <label for="descPresta">Definissez une <span>description</span> :</label>
+                <textarea name="descPrestaInput" id="descPresta" cols="30" rows="7" maxlength="2000" placeholder="Description (2000 caractères maximum)"></textarea>
+                
+                <!-- Déplacements -->
+                <div id="deplacementDiv">
+                    Avez-vous la possibilité de vous <span>déplacer</span> ?
+                    <label for="deplacementOUI">Oui</label>
+                    <input type="radio" name="deplacement" id="deplacementOUI">
+                    <label for="deplacementNON">Non</label>
+                    <input type="radio" name="deplacement" id="deplacementNON">
+                </div>
+
+                <!-- Dropdown instruments -->
+                <div class="btn-group dropend dropdown-menu-md-start" id="instrumentSelectionDiv">
+                <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
+                    Instruments
                 </button>
-                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <li>
-                        <a class="dropdown-item" href="#">
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="Checkme1" />
-                                <label class="form-check-label" for="Checkme1">Check me</label>
-                            </div>
-                        </a>
+                <ul class="dropdown-menu">
+                    <li class="dropend">
+                        <a class="dropdown-item dropdown-toggle" data-bs-toggle="dropdown" data-bs-auto-close="outside" href="#">Bois</a>
+                        <ul class="dropdown-menu">
+                            <li class="dropend">
+                                <a class="dropdown-item dropdown-toggle" data-bs-toggle="dropdown" data-bs-auto-close="outside" href="#">Saxophones</a>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <div class="form-check">
+                                            <input class="" type="checkbox" value="" id="bois_saxo_soprarino" />
+                                            <label class="" for="bois_saxo_soprarino">Soprarino</label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="form-check">
+                                            <input class="" type="checkbox" value="" id="bois_saxo_soprano" />
+                                            <label class="" for="bois_saxo_soprano">Soprano</label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="form-check">
+                                            <input class="" type="checkbox" value="" id="bois_saxo_alto" />
+                                            <label class="" for="bois_saxo_alto">Alto</label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="form-check">
+                                            <input class="" type="checkbox" value="" id="bois_saxo_tenor" />
+                                            <label class="" for="bois_saxo_tenor">Ténor</label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="form-check">
+                                            <input class="" type="checkbox" value="" id="bois_saxo_baryton" />
+                                            <label class="" for="bois_saxo_baryton">Baryton</label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="form-check">
+                                            <input class="" type="checkbox" value="" id="bois_saxo_basse" />
+                                            <label class="" for="bois_saxo_basse">Basse</label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="form-check">
+                                            <input class="" type="checkbox" value="" id="bois_saxo_contrebasse" />
+                                            <label class="" for="bois_saxo_contrebasse">Contre basse</label>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <div class="form-check">
+                                    <input class="" type="checkbox" value="" id="bois_hautbois" />
+                                    <label class="" for="bois_hautbois">Hautbois</label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="form-check">
+                                    <input class="" type="checkbox" value="" id="bois_basson" />
+                                    <label class="" for="bois_basson">Basson</label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="form-check">
+                                    <input class="" type="checkbox" value="" id="bois_flute-bec" />
+                                    <label class="" for="bois_flute-bec">Flûte à bec</label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="form-check">
+                                    <input class="" type="checkbox" value="" id="bois_flute-traversiere" />
+                                    <label class="" for="bois_flute-traversiere">Flûte traversière</label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="form-check">
+                                    <input class="" type="checkbox" value="" id="bois_clarinette" />
+                                    <label class="" for="bois_clarinette">Clarinette</label>
+                                </div>
+                            </li>
+                        </ul>
                     </li>
-                    <li>
-                        <a class="dropdown-item" href="#">
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="Checkme2" checked />
-                                <label class="form-check-label" for="Checkme2">Check me</label>
-                            </div>
-                        </a>
+                    <li class="dropend">
+                        <a class="dropdown-item dropdown-toggle" data-bs-toggle="dropdown" data-bs-auto-close="outside" href="#">Cuivre</a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <div class="form-check">
+                                    <input class="" type="checkbox" value="" id="cuivre_trompette" />
+                                    <label class="" for="cuivre_trompette">Trompette</label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="form-check">
+                                    <input class="" type="checkbox" value="" id="cuivre_trombone-coulisse" />
+                                    <label class="" for="cuivre_trombone-coulisse">Trombone à coulisse</label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="form-check">
+                                    <input class="" type="checkbox" value="" id="cuivre_cor" />
+                                    <label class="" for="cuivre_cor">Cor d'harmonie</label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="form-check">
+                                    <input class="" type="checkbox" value="" id="cuivre_tuba" />
+                                    <label class="" for="cuivre_tuba">Tuba</label>
+                                </div>
+                            </li>
+                        </ul>
                     </li>
-                    <li>
-                        <a class="dropdown-item" href="#">
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="Checkme3" />
-                                <label class="form-check-label" for="Checkme3">Check me</label>
-                            </div>
-                        </a>
+                    <li class="dropend">
+                        <a class="dropdown-item dropdown-toggle" data-bs-toggle="dropdown" data-bs-auto-close="outside" href="#">Idiophones</a>
+                        <ul class="dropdown-menu">
+                            <li class="dropend">
+                                <a class="dropdown-item dropdown-toggle" data-bs-toggle="dropdown" data-bs-auto-close="outside" href="#">Métallophones</a>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <div class="form-check">
+                                            <input class="" type="checkbox" value="" id="idiophones_celesta" />
+                                            <label class="" for="idiophones_celesta">Célesta</label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="form-check">
+                                            <input class="" type="checkbox" value="" id="idiophones_cloche-tubulaire" />
+                                            <label class="" for="idiophones_cloche-tubulaire">Cloche tubulaire</label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="form-check">
+                                            <input class="" type="checkbox" value="" id="idiophones_glockenspiel" />
+                                            <label class="" for="idiophones_glockenspiel">Glockenspiel</label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="form-check">
+                                            <input class="" type="checkbox" value="" id="idiophones_steel drum" />
+                                            <label class="" for="idiophones_steel drum">Steel drum</label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="form-check">
+                                            <input class="" type="checkbox" value="" id="idiophones_vibraphone" />
+                                            <label class="" for="idiophones_vibraphone">Vibraphone</label>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="dropend">
+                                <a class="dropdown-item dropdown-toggle" data-bs-toggle="dropdown" data-bs-auto-close="outside" href="#">Xylophones</a>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <div class="form-check">
+                                            <input class="" type="checkbox" value="" id="idiophones_xylophones-eu" />
+                                            <label class="" for="idiophones_xylophones-eu">Xylophones européens</label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="form-check">
+                                            <input class="" type="checkbox" value="" id="idiophones_marimba" />
+                                            <label class="" for="idiophones_marimba">Marimba</label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="form-check">
+                                            <input class="" type="checkbox" value="" id="idiophones_balafon" />
+                                            <label class="" for="idiophones_balafon">Balafon</label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="form-check">
+                                            <input class="" type="checkbox" value="" id="idiophones_xylophones-as-se" />
+                                            <label class="" for="idiophones_xylophones-as-se">Xylophones d'Asie du Sud-Est</label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="form-check">
+                                            <input class="" type="checkbox" value="" id="idiophones_cajon" />
+                                            <label class="" for="idiophones_cajon">Cajón</label>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <div class="form-check">
+                                    <input class="" type="checkbox" value="" id="idiophones_tambours-fente" />
+                                    <label class="" for="idiophones_tambours-fente">Tambours à fente</label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="form-check">
+                                    <input class="" type="checkbox" value="" id="idiophones_tambour-eau" />
+                                    <label class="" for="idiophones_tambour-eau">Tambour d'eau</label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="form-check">
+                                    <input class="" type="checkbox" value="" id="idiophones_lithophones" />
+                                    <label class="" for="idiophones_lithophones">Lithophones</label>
+                                </div>
+                            </li>
+                        </ul>
                     </li>
-                    <li><hr class="dropdown-divider" /></li>
+                    <li class="dropend">
+                        <a class="dropdown-item dropdown-toggle" data-bs-toggle="dropdown" data-bs-auto-close="outside" href="#">Frappés</a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <div class="form-check">
+                                    <input class="" type="checkbox" value="" id="frappes_piano-forte" />
+                                    <label class="" for="frappes_piano-forte">Piano-forte</label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="form-check">
+                                    <input class="" type="checkbox" value="" id="frappes_piano" />
+                                    <label class="" for="frappes_piano">Piano</label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="form-check">
+                                    <input class="" type="checkbox" value="" id="frappes_cymbalum" />
+                                    <label class="" for="frappes_cymbalum">Cymbalum</label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="form-check">
+                                    <input class="" type="checkbox" value="" id="frappes_tambourin-corde" />
+                                    <label class="" for="frappes_tambourin-corde">Tambourin à corde</label>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropend">
+                        <a class="dropdown-item dropdown-toggle" data-bs-toggle="dropdown" data-bs-auto-close="outside" href="#">Frottés</a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <div class="form-check">
+                                    <input class="" type="checkbox" value="" id="frottes_alto" />
+                                    <label class="" for="frottes_alto">Alto</label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="form-check">
+                                    <input class="" type="checkbox" value="" id="frottes_contrebasse" />
+                                    <label class="" for="frottes_contrebasse">Contrebasse</label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="form-check">
+                                    <input class="" type="checkbox" value="" id="frottes_viole-gambe" />
+                                    <label class="" for="frottes_viole-gambe">Viole de gambe</label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="form-check">
+                                    <input class="" type="checkbox" value="" id="frottes_violon" />
+                                    <label class="" for="frottes_violon">Violon</label>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropend">
+                        <a class="dropdown-item dropdown-toggle" data-bs-toggle="dropdown" data-bs-auto-close="outside" href="#">Membranophones</a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <div class="form-check">
+                                    <input class="" type="checkbox" value="" id="membranophone_bongo" />
+                                    <label class="" for="membranophone_bongo">Bongo</label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="form-check">
+                                    <input class="" type="checkbox" value="" id="membranophone_bongos" />
+                                    <label class="" for="membranophone_bongos">Bongos</label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="form-check">
+                                    <input class="" type="checkbox" value="" id="membranophone_casse-claire" />
+                                    <label class="" for="membranophone_casse-claire">Caisse claire</label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="form-check">
+                                    <input class="" type="checkbox" value="" id="membranophone_darbouka" />
+                                    <label class="" for="membranophone_darbouka">Darbouka</label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="form-check">
+                                    <input class="" type="checkbox" value="" id="membranophone_musicales" />
+                                    <label class="" for="membranophone_musicales">Musicales</label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="form-check">
+                                    <input class="" type="checkbox" value="" id="membranophone_tabla" />
+                                    <label class="" for="membranophone_tabla">Tablā</label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="form-check">
+                                    <input class="" type="checkbox" value="" id="membranophone_tambours" />
+                                    <label class="" for="membranophone_tambours">Tambours</label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="form-check">
+                                    <input class="" type="checkbox" value="" id="membranophone_tambours-cadre" />
+                                    <label class="" for="membranophone_tambours-cadre">Tambours sur cadre</label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="form-check">
+                                    <input class="" type="checkbox" value="" id="membranophone_timbales" />
+                                    <label class="" for="membranophone_timbales">Timbales</label>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropend">
+                        <a class="dropdown-item dropdown-toggle" data-bs-toggle="dropdown" data-bs-auto-close="outside" href="#">Pincés</a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <div class="form-check">
+                                    <input class="" type="checkbox" value="" id="pinces_clavecin" />
+                                    <label class="" for="pinces_clavecin">Clavecin</label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="form-check">
+                                    <input class="" type="checkbox" value="" id="pinces_Guitare" />
+                                    <label class="" for="pinces_Guitare">Guitare</label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="form-check">
+                                    <input class="" type="checkbox" value="" id="pinces_ukulele" />
+                                    <label class="" for="pinces_ukulele">Ukulele</label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="form-check">
+                                    <input class="" type="checkbox" value="" id="pinces_basse" />
+                                    <label class="" for="pinces_basse">basse</label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="form-check">
+                                    <input class="" type="checkbox" value="" id="pinces_banjo" />
+                                    <label class="" for="pinces_banjo">Banjo</label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="form-check">
+                                    <input class="" type="checkbox" value="" id="pinces_mandoline" />
+                                    <label class="" for="pinces_mandoline">Mandoline</label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="form-check">
+                                    <input class="" type="checkbox" value="" id="pinces_luth" />
+                                    <label class="" for="pinces_luth">Luth</label>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropend">
+                        <a class="dropdown-item dropdown-toggle" data-bs-toggle="dropdown" data-bs-auto-close="outside" href="#">Voix</a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <div class="form-check">
+                                    <input class="" type="checkbox" value="" id="voix_soprano" />
+                                    <label class="" for="voix_soprano">Soprano</label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="form-check">
+                                    <input class="" type="checkbox" value="" id="voix_mezzo-soprano" />
+                                    <label class="" for="voix_mezzo-soprano">Mezzo-soprano</label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="form-check">
+                                    <input class="" type="checkbox" value="" id="voix_contralto" />
+                                    <label class="" for="voix_contralto">Contralto</label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="form-check">
+                                    <input class="" type="checkbox" value="" id="voix_contre-tenor" />
+                                    <label class="" for="voix_contre-tenor">Contre-ténor</label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="form-check">
+                                    <input class="" type="checkbox" value="" id="voix_tenor" />
+                                    <label class="" for="voix_tenor">Ténor</label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="form-check">
+                                    <input class="" type="checkbox" value="" id="voix_baryton" />
+                                    <label class="" for="voix_baryton">Baryton</label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="form-check">
+                                    <input class="" type="checkbox" value="" id="voix_basse" />
+                                    <label class="" for="voix_basse">Basse</label>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown-divider"></li>
                     <li>
-                        <a class="dropdown-item" href="#">
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="Checkme4" checked />
-                                <label class="form-check-label" for="Checkme4">Check me</label>
-                            </div>
+                        <a class="" href="#" target="_blank">
+                            Instrument introuvable ?
+                            <i class="bi bi-box-arrow-up-right"></i>
                         </a>
                     </li>
                 </ul>
+                </div>
+
+                <!-- Dropdown styles musicaux -->
+                <div class="btn-group dropend">
+                    <button type="button" class="btn btn-primary dropdown-toggle" data-bs-auto-close="outside" data-bs-toggle="dropdown" aria-expanded="false">
+                    Style
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <div class="form-check">
+                                <input class="" type="checkbox" value="" id="style_classique" />
+                                <label class="" for="style_classique">Classique</label>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="form-check">
+                                <input class="" type="checkbox" value="" id="style_jazz" />
+                                <label class="" for="style_jazz">Jazz</label>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="form-check">
+                                <input class="" type="checkbox" value="" id="style_rap" />
+                                <label class="" for="style_rap">Rap</label>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="form-check">
+                                <input class="" type="checkbox" value="" id="style_pop" />
+                                <label class="" for="style_pop">Pop</label>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="form-check">
+                                <input class="" type="checkbox" value="" id="style_electro" />
+                                <label class="" for="style_electro">Electro</label>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="form-check">
+                                <input class="" type="checkbox" value="" id="style_funk" />
+                                <label class="" for="style_funk">Funk</label>
+                            </div>
+                        </li>
+                        <li class="dropdown-divider"></li>
+                        <li>
+                            <a class="" href="#" target="_blank">
+                                Style introuvable ?
+                                <i class="bi bi-box-arrow-up-right"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
-    </div>
+        <div class="justify-content-center">
+            <button type="submit">Poster l'annonce</button>
+        </div>
     </form>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
 </html>
