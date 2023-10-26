@@ -11,25 +11,29 @@
 </head>
 <body>
     <header class="container-fluid">
-        <div class="row align-items-center">
-            <div class="row col-md-1 col-4">
-                <img src="images/logo rond.png" alt="logo">
+        <div class="row">
+            <div class="row col-md-2 col-4">
+                <img src="images/logorond.png" alt="logo">
             </div>
-            <div class="row col-md-11 col-8 justify-content-between">
-                <div class="d-md-none col-5 ovalepetit"><a href="#">Connexion</a></div>
-                <div class="d-md-none col-5 ovalepetit"><a href="#">Inscription</a></div>
-            <div id="searchbar" class="col-md-6">
-                <input type="text" name="searchbarInput" id="searchbarInput" placeholder="Rechercher votre artiste..." class="col-md-11 col-10" required>
-                <button type="submit" id="searchButton" class="col-md-1">
-                    <i class="bi bi-search">
-                    </i>
-                </button>
+            <div class="row col-md-10 col-8">
+                <div class="row align-self-center justify-content-around">
+                    <div class="d-md-none col-5 ovalepetit"><a href="#">Connexion</a></div>
+                    <div class="d-md-none col-5 ovalepetit"><a href="#">Inscription</a></div>
+                </div>
+                <div id="searchbar" class="col-md-6 col-12 align-items-center">
+                    <form action="#">
+                        <input type="text" name="searchbarInput" id="searchbarInput" placeholder="Rechercher votre artiste..." class="col-11" required>
+                        <button type="submit" id="searchButton" class="col-1">
+                            <i class="bi bi-search">
+                            </i>
+                        </button>
+                    </form>
+                </div>
+                <div class="row col-md-6 justify-content-evenly">
+                    <div class="col-md-4 d-none d-md-block ovalegrand"><a href="#">Connexion</a></div>
+                    <div class="col-md-4 d-none d-md-block ovalegrand"><a href="#">Inscription</a></div>
+                </div>
             </div>
-            <div class="col-md-1 d-none d-md-block"></div>
-            <div class="col-md-1 d-none d-md-block ovalegrand"><a href="#">Connexion</a></div>
-            <div class="col-md-1 d-none d-md-block"></div>
-            <div class="col-md-1 d-none d-md-block ovalegrand"><a href="#">Inscription</a></div>
-        </div>
         </div>
     </header>
     <div class="container-fluid">
@@ -64,10 +68,10 @@
                     <div class="d-inline-block row">
                         <!-- Titre -->
                     <label for="titrePresta">Choisissez un <span>titre</span> :</label>
-                    <input type="text" name="titrePrestaInput" id="titrePresta" maxlength="75" placeholder="Titre (75 caractères maximum)">
+                    <input type="text" name="titrePrestaInput" id="titrePresta" maxlength="75" placeholder="Titre (75 caractères maximum)" required>
                     <!-- Description -->
                     <label for="descPresta">Definissez une <span>description</span> :</label>
-                    <textarea name="descPrestaInput" id="descPresta" cols="30" rows="7" maxlength="2000" placeholder="Description (2000 caractères maximum)"></textarea>
+                    <textarea name="descPrestaInput" id="descPresta" cols="30" rows="7" maxlength="2000" placeholder="Description (2000 caractères maximum)" required></textarea>
                     
                     <!-- Déplacements -->
                     <div id="deplacementDiv">
@@ -76,7 +80,7 @@
                         </p>
                         <div class="d-inline-block">
                             <label for="deplacementOUI">Oui</label>
-                            <input type="radio" name="deplacement" id="deplacementOUI">
+                            <input type="radio" name="deplacement" id="deplacementOUI" required>
                             <label for="deplacementNON">Non</label>
                             <input type="radio" name="deplacement" id="deplacementNON">
                         </div>
@@ -85,7 +89,7 @@
                     <!-- Dropdown instruments -->
                     <div class="btn-group dropend dropdown-menu-md-start d-inline-flex p-2 col-md-5 drops">
                     <button type="button" class="btn btn-primary dropdown-toggle SelectionDiv" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
-                        Instruments
+                        Quel est l’instrument utilisé ?
                     </button>
                     <ul class="dropdown-menu w-100">
                         <li class="dropend">
@@ -225,8 +229,8 @@
                                         </li>
                                         <li>
                                             <div class="form-check">
-                                                <input class="" type="checkbox" value="" id="idiophones_steel drum" />
-                                                <label class="" for="idiophones_steel drum">Steel drum</label>
+                                                <input class="" type="checkbox" value="" id="idiophones_steel_drum" />
+                                                <label class="" for="idiophones_steel_drum">Steel drum</label>
                                             </div>
                                         </li>
                                         <li>
@@ -516,7 +520,7 @@
                     <!-- Dropdown styles musicaux -->
                     <div class="btn-group dropend  d-inline-flex p-2 col-md-5">
                         <button type="button" class="btn btn-primary dropdown-toggle SelectionDiv" data-bs-auto-close="outside" data-bs-toggle="dropdown" aria-expanded="false" >
-                        Style
+                            Quels sont les styles concernés ?
                         </button>
                         <ul class="dropdown-menu">
                             <li>
@@ -555,7 +559,6 @@
                                     <label class="" for="style_funk">Funk</label>
                                 </div>
                             </li>
-                            <li class="dropdown-divider"></li>
                             <li>
                                 <a class="" href="#" target="_blank">
                                     Style introuvable ?
@@ -579,11 +582,11 @@
             <!-- Partie de droite -->
                 <div class="d-inline-block row">
                     <!-- Titre -->
-                <label for="titrePresta">Choisissez un <span>titre</span> :</label>
-                <input type="text" name="titrePrestaInput" id="titrePresta" maxlength="75" placeholder="Titre (75 caractères maximum)" required>
+                <label for="titrePresta-small">Choisissez un <span>titre</span> :</label>
+                <input type="text" name="titrePrestaInput-small" id="titrePresta-small" maxlength="75" placeholder="Titre (75 caractères maximum)" required>
                 <!-- Description -->
-                <label for="descPresta">Definissez une <span>description</span> :</label>
-                <textarea name="descPrestaInput" id="descPresta" cols="30" rows="7" maxlength="2000" placeholder="Description (2000 caractères maximum)" required></textarea>
+                <label for="descPresta-small">Definissez une <span>description</span> :</label>
+                <textarea name="descPrestaInput-small" id="descPresta-small" cols="30" rows="7" maxlength="2000" placeholder="Description (2000 caractères maximum)" required></textarea>
                                 <!-- Modal instruments -->
                 <div class="dropend d-inline-flex p-2 col-10">
                     <button type="button" class="btn btn-primary dropdown-toggle SelectionDiv col-12" data-bs-toggle="modal" data-bs-target="#instrumentModal">
@@ -606,76 +609,76 @@
                                     <ul class="dropdown-menu">
                                         <li>
                                             <div class="form-check">
-                                                <input class="" type="checkbox" value="" id="bois_saxo_soprarino" />
-                                                <label class="" for="bois_saxo_soprarino">Soprarino</label>
+                                                <input class="" type="checkbox" value="" id="bois_saxo_soprarino-small" />
+                                                <label class="" for="bois_saxo_soprarino-small">Soprarino</label>
                                             </div>
                                         </li>
                                         <li>
                                             <div class="form-check">
-                                                <input class="" type="checkbox" value="" id="bois_saxo_soprano" />
-                                                <label class="" for="bois_saxo_soprano">Soprano</label>
+                                                <input class="" type="checkbox" value="" id="bois_saxo_soprano-small" />
+                                                <label class="" for="bois_saxo_soprano-small">Soprano</label>
                                             </div>
                                         </li>
                                         <li>
                                             <div class="form-check">
-                                                <input class="" type="checkbox" value="" id="bois_saxo_alto" />
-                                                <label class="" for="bois_saxo_alto">Alto</label>
+                                                <input class="" type="checkbox" value="" id="bois_saxo_alto-small" />
+                                                <label class="" for="bois_saxo_alto-small">Alto</label>
                                             </div>
                                         </li>
                                         <li>
                                             <div class="form-check">
-                                                <input class="" type="checkbox" value="" id="bois_saxo_tenor" />
-                                                <label class="" for="bois_saxo_tenor">Ténor</label>
+                                                <input class="" type="checkbox" value="" id="bois_saxo_tenor-small" />
+                                                <label class="" for="bois_saxo_tenor-small">Ténor</label>
                                             </div>
                                         </li>
                                         <li>
                                             <div class="form-check">
-                                                <input class="" type="checkbox" value="" id="bois_saxo_baryton" />
-                                                <label class="" for="bois_saxo_baryton">Baryton</label>
+                                                <input class="" type="checkbox" value="" id="bois_saxo_baryton-small" />
+                                                <label class="" for="bois_saxo_baryton-small">Baryton</label>
                                             </div>
                                         </li>
                                         <li>
                                             <div class="form-check">
-                                                <input class="" type="checkbox" value="" id="bois_saxo_basse" />
-                                                <label class="" for="bois_saxo_basse">Basse</label>
+                                                <input class="" type="checkbox" value="" id="bois_saxo_basse-small" />
+                                                <label class="" for="bois_saxo_basse-small">Basse</label>
                                             </div>
                                         </li>
                                         <li>
                                             <div class="form-check">
-                                                <input class="" type="checkbox" value="" id="bois_saxo_contrebasse" />
-                                                <label class="" for="bois_saxo_contrebasse">Contre basse</label>
+                                                <input class="" type="checkbox" value="" id="bois_saxo_contrebasse-small" />
+                                                <label class="" for="bois_saxo_contrebasse-small">Contre basse</label>
                                             </div>
                                         </li>
                                     </ul>
                                 </li>
                                 <li>
                                     <div class="form-check">
-                                        <input class="" type="checkbox" value="" id="bois_hautbois" />
-                                        <label class="" for="bois_hautbois">Hautbois</label>
+                                        <input class="" type="checkbox" value="" id="bois_hautbois-small" />
+                                        <label class="" for="bois_hautbois-small">Hautbois</label>
                                     </div>
                                 </li>
                                 <li>
                                     <div class="form-check">
-                                        <input class="" type="checkbox" value="" id="bois_basson" />
-                                        <label class="" for="bois_basson">Basson</label>
+                                        <input class="" type="checkbox" value="" id="bois_basson-small" />
+                                        <label class="" for="bois_basson-small">Basson</label>
                                     </div>
                                 </li>
                                 <li>
                                     <div class="form-check">
-                                        <input class="" type="checkbox" value="" id="bois_flute-bec" />
-                                        <label class="" for="bois_flute-bec">Flûte à bec</label>
+                                        <input class="" type="checkbox" value="" id="bois_flute-bec-small" />
+                                        <label class="" for="bois_flute-bec-small">Flûte à bec</label>
                                     </div>
                                 </li>
                                 <li>
                                     <div class="form-check">
-                                        <input class="" type="checkbox" value="" id="bois_flute-traversiere" />
-                                        <label class="" for="bois_flute-traversiere">Flûte traversière</label>
+                                        <input class="" type="checkbox" value="" id="bois_flute-traversiere-small" />
+                                        <label class="" for="bois_flute-traversiere-small">Flûte traversière</label>
                                     </div>
                                 </li>
                                 <li>
                                     <div class="form-check">
-                                        <input class="" type="checkbox" value="" id="bois_clarinette" />
-                                        <label class="" for="bois_clarinette">Clarinette</label>
+                                        <input class="" type="checkbox" value="" id="bois_clarinette-small" />
+                                        <label class="" for="bois_clarinette-small">Clarinette</label>
                                     </div>
                                 </li>
                             </ul>
@@ -685,26 +688,26 @@
                             <ul class="dropdown-menu">
                                 <li>
                                     <div class="form-check">
-                                        <input class="" type="checkbox" value="" id="cuivre_trompette" />
-                                        <label class="" for="cuivre_trompette">Trompette</label>
+                                        <input class="" type="checkbox" value="" id="cuivre_trompette-small" />
+                                        <label class="" for="cuivre_trompette-small">Trompette</label>
                                     </div>
                                 </li>
                                 <li>
                                     <div class="form-check">
-                                        <input class="" type="checkbox" value="" id="cuivre_trombone-coulisse" />
-                                        <label class="" for="cuivre_trombone-coulisse">Trombone à coulisse</label>
+                                        <input class="" type="checkbox" value="" id="cuivre_trombone-coulisse-small" />
+                                        <label class="" for="cuivre_trombone-coulisse-small">Trombone à coulisse</label>
                                     </div>
                                 </li>
                                 <li>
                                     <div class="form-check">
-                                        <input class="" type="checkbox" value="" id="cuivre_cor" />
-                                        <label class="" for="cuivre_cor">Cor d'harmonie</label>
+                                        <input class="" type="checkbox" value="" id="cuivre_cor-small" />
+                                        <label class="" for="cuivre_cor-small">Cor d'harmonie</label>
                                     </div>
                                 </li>
                                 <li>
                                     <div class="form-check">
-                                        <input class="" type="checkbox" value="" id="cuivre_tuba" />
-                                        <label class="" for="cuivre_tuba">Tuba</label>
+                                        <input class="" type="checkbox" value="" id="cuivre_tuba-small" />
+                                        <label class="" for="cuivre_tuba-small">Tuba</label>
                                     </div>
                                 </li>
                             </ul>
@@ -717,32 +720,32 @@
                                     <ul class="dropdown-menu">
                                         <li>
                                             <div class="form-check">
-                                                <input class="" type="checkbox" value="" id="idiophones_celesta" />
-                                                <label class="" for="idiophones_celesta">Célesta</label>
+                                                <input class="" type="checkbox" value="" id="idiophones_celesta-small" />
+                                                <label class="" for="idiophones_celesta-small">Célesta</label>
                                             </div>
                                         </li>
                                         <li>
                                             <div class="form-check">
-                                                <input class="" type="checkbox" value="" id="idiophones_cloche-tubulaire" />
-                                                <label class="" for="idiophones_cloche-tubulaire">Cloche tubulaire</label>
+                                                <input class="" type="checkbox" value="" id="idiophones_cloche-tubulaire-small" />
+                                                <label class="" for="idiophones_cloche-tubulaire-small">Cloche tubulaire</label>
                                             </div>
                                         </li>
                                         <li>
                                             <div class="form-check">
-                                                <input class="" type="checkbox" value="" id="idiophones_glockenspiel" />
-                                                <label class="" for="idiophones_glockenspiel">Glockenspiel</label>
+                                                <input class="" type="checkbox" value="" id="idiophones_glockenspiel-small" />
+                                                <label class="" for="idiophones_glockenspiel-small">Glockenspiel</label>
                                             </div>
                                         </li>
                                         <li>
                                             <div class="form-check">
-                                                <input class="" type="checkbox" value="" id="idiophones_steel drum" />
-                                                <label class="" for="idiophones_steel drum">Steel drum</label>
+                                                <input class="" type="checkbox" value="" id="idiophones_steel_drum-small" />
+                                                <label class="" for="idiophones_steel_drum-small">Steel drum</label>
                                             </div>
                                         </li>
                                         <li>
                                             <div class="form-check">
-                                                <input class="" type="checkbox" value="" id="idiophones_vibraphone" />
-                                                <label class="" for="idiophones_vibraphone">Vibraphone</label>
+                                                <input class="" type="checkbox" value="" id="idiophones_vibraphone-small" />
+                                                <label class="" for="idiophones_vibraphone-small">Vibraphone</label>
                                             </div>
                                         </li>
                                     </ul>
@@ -752,52 +755,52 @@
                                     <ul class="dropdown-menu">
                                         <li>
                                             <div class="form-check">
-                                                <input class="" type="checkbox" value="" id="idiophones_xylophones-eu" />
-                                                <label class="" for="idiophones_xylophones-eu">Européens</label>
+                                                <input class="" type="checkbox" value="" id="idiophones_xylophones-eu-small" />
+                                                <label class="" for="idiophones_xylophones-eu-small">Européens</label>
                                             </div>
                                         </li>
                                         <li>
                                             <div class="form-check">
-                                                <input class="" type="checkbox" value="" id="idiophones_marimba" />
-                                                <label class="" for="idiophones_marimba">Marimba</label>
+                                                <input class="" type="checkbox" value="" id="idiophones_marimba-small" />
+                                                <label class="" for="idiophones_marimba-small">Marimba</label>
                                             </div>
                                         </li>
                                         <li>
                                             <div class="form-check">
-                                                <input class="" type="checkbox" value="" id="idiophones_balafon" />
-                                                <label class="" for="idiophones_balafon">Balafon</label>
+                                                <input class="" type="checkbox" value="" id="idiophones_balafon-small" />
+                                                <label class="" for="idiophones_balafon-small">Balafon</label>
                                             </div>
                                         </li>
                                         <li>
                                             <div class="form-check">
-                                                <input class="" type="checkbox" value="" id="idiophones_xylophones-as-se" />
-                                                <label class="" for="idiophones_xylophones-as-se">Asie du Sud-Est</label>
+                                                <input class="" type="checkbox" value="" id="idiophones_xylophones-as-se-small" />
+                                                <label class="" for="idiophones_xylophones-as-se-small">Asie du Sud-Est</label>
                                             </div>
                                         </li>
                                         <li>
                                             <div class="form-check">
-                                                <input class="" type="checkbox" value="" id="idiophones_cajon" />
-                                                <label class="" for="idiophones_cajon">Cajón</label>
+                                                <input class="" type="checkbox" value="" id="idiophones_cajon-small" />
+                                                <label class="" for="idiophones_cajon-small">Cajón</label>
                                             </div>
                                         </li>
                                     </ul>
                                 </li>
                                 <li>
                                     <div class="form-check">
-                                        <input class="" type="checkbox" value="" id="idiophones_tambours-fente" />
-                                        <label class="" for="idiophones_tambours-fente">Tambours à fente</label>
+                                        <input class="" type="checkbox" value="" id="idiophones_tambours-fente-small" />
+                                        <label class="" for="idiophones_tambours-fente-small">Tambours à fente</label>
                                     </div>
                                 </li>
                                 <li>
                                     <div class="form-check">
-                                        <input class="" type="checkbox" value="" id="idiophones_tambour-eau" />
-                                        <label class="" for="idiophones_tambour-eau">Tambour d'eau</label>
+                                        <input class="" type="checkbox" value="" id="idiophones_tambour-eau-small" />
+                                        <label class="" for="idiophones_tambour-eau-small">Tambour d'eau</label>
                                     </div>
                                 </li>
                                 <li>
                                     <div class="form-check">
-                                        <input class="" type="checkbox" value="" id="idiophones_lithophones" />
-                                        <label class="" for="idiophones_lithophones">Lithophones</label>
+                                        <input class="" type="checkbox" value="" id="idiophones_lithophones-small" />
+                                        <label class="" for="idiophones_lithophones-small">Lithophones</label>
                                     </div>
                                 </li>
                             </ul>
@@ -807,26 +810,26 @@
                             <ul class="dropdown-menu">
                                 <li>
                                     <div class="form-check">
-                                        <input class="" type="checkbox" value="" id="frappes_piano-forte" />
-                                        <label class="" for="frappes_piano-forte">Piano-forte</label>
+                                        <input class="" type="checkbox" value="" id="frappes_piano-forte-small" />
+                                        <label class="" for="frappes_piano-forte-small">Piano-forte</label>
                                     </div>
                                 </li>
                                 <li>
                                     <div class="form-check">
-                                        <input class="" type="checkbox" value="" id="frappes_piano" />
-                                        <label class="" for="frappes_piano">Piano</label>
+                                        <input class="" type="checkbox" value="" id="frappes_piano-small" />
+                                        <label class="" for="frappes_piano-small">Piano</label>
                                     </div>
                                 </li>
                                 <li>
                                     <div class="form-check">
-                                        <input class="" type="checkbox" value="" id="frappes_cymbalum" />
-                                        <label class="" for="frappes_cymbalum">Cymbalum</label>
+                                        <input class="" type="checkbox" value="" id="frappes_cymbalum-small" />
+                                        <label class="" for="frappes_cymbalum-small">Cymbalum</label>
                                     </div>
                                 </li>
                                 <li>
                                     <div class="form-check">
-                                        <input class="" type="checkbox" value="" id="frappes_tambourin-corde" />
-                                        <label class="" for="frappes_tambourin-corde">Tambourin à corde</label>
+                                        <input class="" type="checkbox" value="" id="frappes_tambourin-corde-small" />
+                                        <label class="" for="frappes_tambourin-corde-small">Tambourin à corde</label>
                                     </div>
                                 </li>
                             </ul>
@@ -836,26 +839,26 @@
                             <ul class="dropdown-menu">
                                 <li>
                                     <div class="form-check">
-                                        <input class="" type="checkbox" value="" id="frottes_alto" />
-                                        <label class="" for="frottes_alto">Alto</label>
+                                        <input class="" type="checkbox" value="" id="frottes_alto-small" />
+                                        <label class="" for="frottes_alto-small">Alto</label>
                                     </div>
                                 </li>
                                 <li>
                                     <div class="form-check">
-                                        <input class="" type="checkbox" value="" id="frottes_contrebasse" />
-                                        <label class="" for="frottes_contrebasse">Contrebasse</label>
+                                        <input class="" type="checkbox" value="" id="frottes_contrebasse-small" />
+                                        <label class="" for="frottes_contrebasse-small">Contrebasse</label>
                                     </div>
                                 </li>
                                 <li>
                                     <div class="form-check">
-                                        <input class="" type="checkbox" value="" id="frottes_viole-gambe" />
-                                        <label class="" for="frottes_viole-gambe">Viole de gambe</label>
+                                        <input class="" type="checkbox" value="" id="frottes_viole-gambe-small" />
+                                        <label class="" for="frottes_viole-gambe-small">Viole de gambe</label>
                                     </div>
                                 </li>
                                 <li>
                                     <div class="form-check">
-                                        <input class="" type="checkbox" value="" id="frottes_violon" />
-                                        <label class="" for="frottes_violon">Violon</label>
+                                        <input class="" type="checkbox" value="" id="frottes_violon-small" />
+                                        <label class="" for="frottes_violon-small">Violon</label>
                                     </div>
                                 </li>
                             </ul>
@@ -865,56 +868,56 @@
                             <ul class="dropdown-menu">
                                 <li>
                                     <div class="form-check">
-                                        <input class="" type="checkbox" value="" id="membranophone_bongo" />
-                                        <label class="" for="membranophone_bongo">Bongo</label>
+                                        <input class="" type="checkbox" value="" id="membranophone_bongo-small" />
+                                        <label class="" for="membranophone_bongo-small">Bongo</label>
                                     </div>
                                 </li>
                                 <li>
                                     <div class="form-check">
-                                        <input class="" type="checkbox" value="" id="membranophone_bongos" />
-                                        <label class="" for="membranophone_bongos">Bongos</label>
+                                        <input class="" type="checkbox" value="" id="membranophone_bongos-small" />
+                                        <label class="" for="membranophone_bongos-small">Bongos</label>
                                     </div>
                                 </li>
                                 <li>
                                     <div class="form-check">
-                                        <input class="" type="checkbox" value="" id="membranophone_casse-claire" />
-                                        <label class="" for="membranophone_casse-claire">Caisse claire</label>
+                                        <input class="" type="checkbox" value="" id="membranophone_casse-claire-small" />
+                                        <label class="" for="membranophone_casse-claire-small">Caisse claire</label>
                                     </div>
                                 </li>
                                 <li>
                                     <div class="form-check">
-                                        <input class="" type="checkbox" value="" id="membranophone_darbouka" />
-                                        <label class="" for="membranophone_darbouka">Darbouka</label>
+                                        <input class="" type="checkbox" value="" id="membranophone_darbouka-small" />
+                                        <label class="" for="membranophone_darbouka-small">Darbouka</label>
                                     </div>
                                 </li>
                                 <li>
                                     <div class="form-check">
-                                        <input class="" type="checkbox" value="" id="membranophone_musicales" />
-                                        <label class="" for="membranophone_musicales">Musicales</label>
+                                        <input class="" type="checkbox" value="" id="membranophone_musicales-small" />
+                                        <label class="" for="membranophone_musicales-small">Musicales</label>
                                     </div>
                                 </li>
                                 <li>
                                     <div class="form-check">
-                                        <input class="" type="checkbox" value="" id="membranophone_tabla" />
-                                        <label class="" for="membranophone_tabla">Tablā</label>
+                                        <input class="" type="checkbox" value="" id="membranophone_tabla-small" />
+                                        <label class="" for="membranophone_tabla-small">Tablā</label>
                                     </div>
                                 </li>
                                 <li>
                                     <div class="form-check">
-                                        <input class="" type="checkbox" value="" id="membranophone_tambours" />
-                                        <label class="" for="membranophone_tambours">Tambours</label>
+                                        <input class="" type="checkbox" value="" id="membranophone_tambours-small" />
+                                        <label class="" for="membranophone_tambours-small">Tambours</label>
                                     </div>
                                 </li>
                                 <li>
                                     <div class="form-check">
-                                        <input class="" type="checkbox" value="" id="membranophone_tambours-cadre" />
-                                        <label class="" for="membranophone_tambours-cadre">Tambours sur cadre</label>
+                                        <input class="" type="checkbox" value="" id="membranophone_tambours-cadre-small" />
+                                        <label class="" for="membranophone_tambours-cadre-small">Tambours sur cadre</label>
                                     </div>
                                 </li>
                                 <li>
                                     <div class="form-check">
-                                        <input class="" type="checkbox" value="" id="membranophone_timbales" />
-                                        <label class="" for="membranophone_timbales">Timbales</label>
+                                        <input class="" type="checkbox" value="" id="membranophone_timbales-small" />
+                                        <label class="" for="membranophone_timbales-small">Timbales</label>
                                     </div>
                                 </li>
                             </ul>
@@ -924,44 +927,44 @@
                             <ul class="dropdown-menu">
                                 <li>
                                     <div class="form-check">
-                                        <input class="" type="checkbox" value="" id="pinces_clavecin" />
-                                        <label class="" for="pinces_clavecin">Clavecin</label>
+                                        <input class="" type="checkbox" value="" id="pinces_clavecin-small" />
+                                        <label class="" for="pinces_clavecin-small">Clavecin</label>
                                     </div>
                                 </li>
                                 <li>
                                     <div class="form-check">
-                                        <input class="" type="checkbox" value="" id="pinces_Guitare" />
-                                        <label class="" for="pinces_Guitare">Guitare</label>
+                                        <input class="" type="checkbox" value="" id="pinces_guitare-small" />
+                                        <label class="" for="pinces_guitare-small">Guitare</label>
                                     </div>
                                 </li>
                                 <li>
                                     <div class="form-check">
-                                        <input class="" type="checkbox" value="" id="pinces_ukulele" />
-                                        <label class="" for="pinces_ukulele">Ukulele</label>
+                                        <input class="" type="checkbox" value="" id="pinces_ukulele-small" />
+                                        <label class="" for="pinces_ukulele-small">Ukulele</label>
                                     </div>
                                 </li>
                                 <li>
                                     <div class="form-check">
-                                        <input class="" type="checkbox" value="" id="pinces_basse" />
-                                        <label class="" for="pinces_basse">basse</label>
+                                        <input class="" type="checkbox" value="" id="pinces_basse-small" />
+                                        <label class="" for="pinces_basse-small">basse</label>
                                     </div>
                                 </li>
                                 <li>
                                     <div class="form-check">
-                                        <input class="" type="checkbox" value="" id="pinces_banjo" />
-                                        <label class="" for="pinces_banjo">Banjo</label>
+                                        <input class="" type="checkbox" value="" id="pinces_banjo-small" />
+                                        <label class="" for="pinces_banjo-small">Banjo</label>
                                     </div>
                                 </li>
                                 <li>
                                     <div class="form-check">
-                                        <input class="" type="checkbox" value="" id="pinces_mandoline" />
-                                        <label class="" for="pinces_mandoline">Mandoline</label>
+                                        <input class="" type="checkbox" value="" id="pinces_mandoline-small" />
+                                        <label class="" for="pinces_mandoline-small">Mandoline</label>
                                     </div>
                                 </li>
                                 <li>
                                     <div class="form-check">
-                                        <input class="" type="checkbox" value="" id="pinces_luth" />
-                                        <label class="" for="pinces_luth">Luth</label>
+                                        <input class="" type="checkbox" value="" id="pinces_luth-small" />
+                                        <label class="" for="pinces_luth-small">Luth</label>
                                     </div>
                                 </li>
                             </ul>
@@ -971,50 +974,48 @@
                                     <ul class="dropdown-menu">
                                         <li>
                                             <div class="form-check">
-                                                <input class="" type="checkbox" value="" id="voix_soprano" />
-                                                <label class="" for="voix_soprano">Soprano</label>
+                                                <input class="" type="checkbox" value="" id="voix_soprano-small" />
+                                                <label class="" for="voix_soprano-small">Soprano</label>
                                             </div>
                                         </li>
                                         <li>
                                             <div class="form-check">
-                                                <input class="" type="checkbox" value="" id="voix_mezzo-soprano" />
-                                                <label class="" for="voix_mezzo-soprano">Mezzo-soprano</label>
+                                                <input class="" type="checkbox" value="" id="voix_mezzo-soprano-small" />
+                                                <label class="" for="voix_mezzo-soprano-small">Mezzo-soprano</label>
                                             </div>
                                         </li>
                                         <li>
                                             <div class="form-check">
-                                                <input class="" type="checkbox" value="" id="voix_contralto" />
-                                                <label class="" for="voix_contralto">Contralto</label>
+                                                <input class="" type="checkbox" value="" id="voix_contralto-small" />
+                                                <label class="" for="voix_contralto-small">Contralto</label>
                                             </div>
                                         </li>
                                         <li>
                                             <div class="form-check">
-                                                <input class="" type="checkbox" value="" id="voix_contre-tenor" />
-                                                <label class="" for="voix_contre-tenor">Contre-ténor</label>
+                                                <input class="" type="checkbox" value="" id="voix_contre-tenor-small" />
+                                                <label class="" for="voix_contre-tenor-small">Contre-ténor</label>
                                             </div>
                                         </li>
                                         <li>
                                             <div class="form-check">
-                                                <input class="" type="checkbox" value="" id="voix_tenor" />
-                                                <label class="" for="voix_tenor">Ténor</label>
+                                                <input class="" type="checkbox" value="" id="voix_tenor-small" />
+                                                <label class="" for="voix_tenor-small">Ténor</label>
                                             </div>
                                         </li>
                                         <li>
                                             <div class="form-check">
-                                                <input class="" type="checkbox" value="" id="voix_baryton" />
-                                                <label class="" for="voix_baryton">Baryton</label>
+                                                <input class="" type="checkbox" value="" id="voix_baryton-small" />
+                                                <label class="" for="voix_baryton-small">Baryton</label>
                                             </div>
                                         </li>
                                         <li>
                                             <div class="form-check">
-                                                <input class="" type="checkbox" value="" id="voix_basse" />
-                                                <label class="" for="voix_basse">Basse</label>
+                                                <input class="" type="checkbox" value="" id="voix_basse-small" />
+                                                <label class="" for="voix_basse-small">Basse</label>
                                             </div>
                                         </li>
                                     </ul>
                                 </li>
-                                
-                                <li class="dropdown-divider"></li>
                                 <li>
                                     <a class="" href="#" target="_blank">
                                         Instrument introuvable ?
@@ -1036,7 +1037,7 @@
                 <div class="dropend d-inline-flex p-2 col-10">
                     <!-- Button trigger modal -->
                     <button type="button" class="btn btn-primary dropdown-toggle SelectionDiv col-12" data-bs-toggle="modal" data-bs-target="#styleModal">
-                        Quels sont les styles concernés
+                        Quels sont les styles concernés ?
                         <i></i>
                     </button>
                     
@@ -1052,41 +1053,40 @@
                             <ul>
                                 <li>
                                     <div class="form-check">
-                                        <input class="" type="checkbox" value="" id="style_classique" />
-                                        <label class="" for="style_classique">Classique</label>
+                                        <input class="" type="checkbox" value="" id="style_classique-small" />
+                                        <label class="" for="style_classique-small">Classique</label>
                                     </div>
                                 </li>
                                 <li>
                                     <div class="form-check">
-                                        <input class="" type="checkbox" value="" id="style_jazz" />
-                                        <label class="" for="style_jazz">Jazz</label>
+                                        <input class="" type="checkbox" value="" id="style_jazz-small" />
+                                        <label class="" for="style_jazz-small">Jazz</label>
                                     </div>
                                 </li>
                                 <li>
                                     <div class="form-check">
-                                        <input class="" type="checkbox" value="" id="style_rap" />
-                                        <label class="" for="style_rap">Rap</label>
+                                        <input class="" type="checkbox" value="" id="style_rap-small" />
+                                        <label class="" for="style_rap-small">Rap</label>
                                     </div>
                                 </li>
                                 <li>
                                     <div class="form-check">
-                                        <input class="" type="checkbox" value="" id="style_pop" />
-                                        <label class="" for="style_pop">Pop</label>
+                                        <input class="" type="checkbox" value="" id="style_pop-small" />
+                                        <label class="" for="style_pop-small">Pop</label>
                                     </div>
                                 </li>
                                 <li>
                                     <div class="form-check">
-                                        <input class="" type="checkbox" value="" id="style_electro" />
-                                        <label class="" for="style_electro">Electro</label>
+                                        <input class="" type="checkbox" value="" id="style_electro-small" />
+                                        <label class="" for="style_electro-small">Electro</label>
                                     </div>
                                 </li>
                                 <li>
                                     <div class="form-check">
-                                        <input class="" type="checkbox" value="" id="style_funk" />
-                                        <label class="" for="style_funk">Funk</label>
+                                        <input class="" type="checkbox" value="" id="style_funk-small" />
+                                        <label class="" for="style_funk-small">Funk</label>
                                     </div>
                                 </li>
-                                <li class="dropdown-divider"></li>
                                 <li>
                                     <a class="" href="#" target="_blank">
                                         Style introuvable ?
@@ -1106,38 +1106,38 @@
                 </div>
                 
                     <p class="d-inline-block">Ajoutez des <span>images</span> à votre annonce :</p>
-                    <div id="mainImage" class="col-md-6 d-inline-block">
+                    <div id="mainImage-small" class="col-md-6 d-inline-block">
                         <button class="sliderButton">
                             <i class="bi bi-caret-left-fill d-md-none d-inline-flex col-1 arrows"></i>
                         </button>
-                        <img src="images/imagePlaceholder.png" alt="Bouton Ajouter une image" title="Cliquer pour ajouter une image à l'annonce" class="img-fluid d-inline-flex col-md-12 col-9" id="image1">
+                        <img src="images/imagePlaceholder.png" alt="Bouton Ajouter une image" title="Cliquer pour ajouter une image à l'annonce" class="img-fluid d-inline-flex col-md-12 col-9" id="image1-small">
                         <button class="sliderButton">
                             <i class="bi bi-caret-right-fill d-md-none d-inline-flex col-1 arrows"></i>
                         </button>
                     </div>
-                    <div id="secondaryImages" class="row col-md-3 d-flex p-2 d-none d-md-block">
-                        <img src="images/imagePlaceholder.png" alt="Bouton Ajouter une image"  title="Cliquer pour ajouter une image à l'annonce"  id="image2" class="img-fluid">
-                        <img src="images/imagePlaceholder.png" alt="Bouton Ajouter une image"  title="Cliquer pour ajouter une image à l'annonce"  class="img-fluid" id="image3">
+                    <div id="secondaryImages-small" class="row col-md-3 d-flex p-2 d-none d-md-block">
+                        <img src="images/imagePlaceholder.png" alt="Bouton Ajouter une image"  title="Cliquer pour ajouter une image à l'annonce"  id="image2-small" class="img-fluid">
+                        <img src="images/imagePlaceholder.png" alt="Bouton Ajouter une image"  title="Cliquer pour ajouter une image à l'annonce"  class="img-fluid" id="image3-small">
                     </div>   
                     
-                    <label for="prixPresta">Quel est le <span>prix</span> de cette prestation ?</label>
-                    <input type="number" name="prixPrestaInput" id="prixPresta" placeholder="Prix (en euros)" class="col-md-7" required>
+                    <label for="prixPresta-small">Quel est le <span>prix</span> de cette prestation ?</label>
+                    <input type="number" name="prixPrestaInput-small" id="prixPresta-small" placeholder="Prix (en euros)" class="col-md-7" required>
                 <!-- Déplacements -->
-                <div id="deplacementDiv">
+                <div id="deplacementDiv-small">
                     <p class="d-inline-block">
                         Avez-vous la possibilité de vous<span> déplacer </span>? 
                     </p>
                     <div class="d-inline-block">
-                        <label for="deplacementOUI">Oui</label>
-                        <input type="radio" name="deplacement" id="deplacementOUI" required>
-                        <label for="deplacementNON">Non</label>
-                        <input type="radio" name="deplacement" id="deplacementNON">
+                        <label for="deplacementOUI-small">Oui</label>
+                        <input type="radio" name="deplacement-small" id="deplacementOUI-small" required>
+                        <label for="deplacementNON-small">Non</label>
+                        <input type="radio" name="deplacement-small" id="deplacementNON-small">
                     </div>
                 </div>
 
 
             <div class="container-fluid text-center">
-                <button type="submit" class="col-md-3" id="poster">Poster l'annonce</button>
+                <button type="submit" class="col-md-3" id="poster-small">Poster l'annonce</button>
             </div>
         </form>
         </div>

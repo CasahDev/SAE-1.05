@@ -29,8 +29,8 @@ h1, h2, h3 {
 }
 
 #contentMedium h1 {
-    margin-left: 3em;
-    margin-top: 1em;;
+    margin-left: 3em !important;
+    margin-top: 1em !important;
 }
 
 #mainImage img, #secondaryImages img{
@@ -63,7 +63,7 @@ input[type="radio"]:checked, input[type="checkbox"]:checked {
     float: right !important;
 }
 
-#poster {
+#poster, #poster_small {
     padding: 0.5em;
     padding-left: 1em;
     padding-right: 1em;
@@ -72,7 +72,8 @@ input[type="radio"]:checked, input[type="checkbox"]:checked {
     font-family: "Roboto";
     color: white;
     font-size: 18pt;
-    font-weight: bold;
+    font-weight: 500;
+    margin-top: 2.2em;
 }
 
 .SelectionDiv {

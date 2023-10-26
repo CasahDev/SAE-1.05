@@ -11,25 +11,29 @@
 </head>
 <body>
     <header class="container-fluid">
-        <div class="row align-items-center">
-            <div class="row col-md-1 col-4"><img src="images/logo rond.png" alt="logo"></div>
-            <div class="row col-md-11 col-8">
-                <div class="d-md-none col-1"></div>
-                <div class="d-md-none col-4 ovalepetit"><a href="#">Connexion</a></div>
-                <div class="d-md-none col-1"></div>
-                <div class="d-md-none col-4 ovalepetit"><a href="#">Inscription</a></div>
-            <div id="searchbar" class="col-md-6">
-                <input type="text" name="searchbarInput" id="searchbarInput" placeholder="Rechercher votre artiste..." class="col-md-11 col-10">
-                <button type="submit" id="searchButton" class="col-md-1">
-                    <i class="bi bi-search">
-                    </i>
-                </button>
+        <div class="row">
+            <div class="row col-md-2 col-4">
+                <img src="images/'logorond'.png" alt="logo">
             </div>
-            <div class="col-md-1 d-none d-md-block"></div>
-            <div class="col-md-1 d-none d-md-block ovalegrand"><a href="#">Connexion</a></div>
-            <div class="col-md-1 d-none d-md-block"></div>
-            <div class="col-md-1 d-none d-md-block ovalegrand"><a href="#">Inscription</a></div>
-        </div>
+            <div class="row col-md-10 col-8">
+                <div class="row align-self-center justify-content-around">
+                    <div class="d-md-none col-5 ovalepetit"><a href="#">Connexion</a></div>
+                    <div class="d-md-none col-5 ovalepetit"><a href="#">Inscription</a></div>
+                </div>
+                <div id="searchbar" class="col-md-6 col-12 align-items-center">
+                    <form action="#">
+                        <input type="text" name="searchbarInput" id="searchbarInput" placeholder="Rechercher votre artiste..." class="col-11" required>
+                        <button type="submit" id="searchButton" class="col-1">
+                            <i class="bi bi-search">
+                            </i>
+                        </button>
+                    </form>
+                </div>
+                <div class="row col-md-6 justify-content-evenly">
+                    <div class="col-md-4 d-none d-md-block ovalegrand"><a href="#">Connexion</a></div>
+                    <div class="col-md-4 d-none d-md-block ovalegrand"><a href="#">Inscription</a></div>
+                </div>
+            </div>
         </div>
     </header>
 

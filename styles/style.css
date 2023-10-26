@@ -18,14 +18,17 @@ header {
     background-color: var(--purple-jam);
 }
 
+header img {
+    width: 8em !important;
+}
+
 #searchbar {
     background-color: var(--white);
-    height: 3vh;
-    padding: 0px;
+    height: 3em;
 }
 
 #searchbar input {
-    height: 3vh;
+    height: 3em;
     border: none;
     font-family: "Roboto";
     color: var(--purple-jam);
@@ -39,27 +42,27 @@ header {
 #searchButton {
     float: right;
     border: none;
-    height: 3vh;
+    height: 3em;
     background-color: transparent;
-    width: 100%;
 }
 
 .ovalegrand, .ovalepetit{
     border-radius: 100%;
     background: var(--internationnal-orange);
     color: var(--white);
-
 }
 
 .ovalegrand{
-    height: 5vh;
+    height: 4.5vh;
+    padding-top: 0.65em;
     text-align: center;
-    justify-content: center;
 }
 
 .ovalepetit{
+    text-align: center;
+    padding-top: 0.5em;
     width: 5vw;
-    height: 3vh ;
+    height: 4vh ;
     font-size: smaller;
 }
 
@@ -74,5 +77,5 @@ header div a:hover{
 }
 
 body{
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-family: "Roboto";
 }
