@@ -20,13 +20,15 @@ header {
 
 #searchbar {
     background-color: var(--white);
-    height: 3em;
+    height: 3vh;
     padding: 0px;
 }
 
 #searchbar input {
-    height: 3em;
+    height: 3vh;
     border: none;
+    font-family: "Roboto";
+    color: var(--purple-jam);
 }
 
 #searchbar input::placeholder {
@@ -37,11 +39,12 @@ header {
 #searchButton {
     float: right;
     border: none;
-    height: 3em;
+    height: 3vh;
     background-color: transparent;
+    width: 100%;
 }
 
-.ovalegrand,.ovalepetit{
+.ovalegrand, .ovalepetit{
     border-radius: 100%;
     background: var(--internationnal-orange);
     color: var(--white);
@@ -49,9 +52,9 @@ header {
 }
 
 .ovalegrand{
-    width: 20vw;
     height: 5vh;
     text-align: center;
+    justify-content: center;
 }
 
 .ovalepetit{
