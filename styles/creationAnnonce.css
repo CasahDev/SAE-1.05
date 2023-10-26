@@ -1,2 +1,33 @@
+p, label {
+    font-family: "Roboto";
+}
 
+span {
+    color: var(--internationnal-orange);
+    font-weight: bold;
+}
 
+h1, h2, h3 {
+    font-family: "Gotham";
+}
+
+h1 {
+    margin-left: 3em;
+}
+
+#mainImage img, #secondaryImages img{
+    border-top:2px solid lightgrey;
+    border-bottom:2px solid rgb(181, 181, 181);
+    border-left:2px solid lightgrey;
+    border-right:2px solid rgb(181, 181, 181);
+    transform: translateY(-5px);
+    margin-bottom: 1em;
+}
+
+input[type="radio"]:checked {
+    accent-color: var(--purple-jam);
+}
+
+#content ::placeholder {
+    font-style: italic;
+}
