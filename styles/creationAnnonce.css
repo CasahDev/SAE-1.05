@@ -63,7 +63,7 @@ input[type="radio"]:checked, input[type="checkbox"]:checked {
     float: right !important;
 }
 
-#poster, #poster_small {
+#poster, #poster-small {
     padding: 0.5em;
     padding-left: 1em;
     padding-right: 1em;
